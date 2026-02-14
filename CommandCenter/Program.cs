@@ -14,12 +14,8 @@ if (!string.IsNullOrEmpty(port))
 
 var app = builder.Build();
 
-// Swagger only local
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseSwagger();
+app.UseSwaggerUI();
 
 // HTTPS only local
 if (!app.Environment.IsProduction())
